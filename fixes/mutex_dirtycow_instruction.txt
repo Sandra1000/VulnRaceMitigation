@@ -1,0 +1,19 @@
+# Mitigating DirtyCow.
+
+$ cd fixes
+
+## Mutex Implementation for DirtyCow (CVE-2016-5195) Module approach
+
+1. Run the make command
+$ make
+
+5.	Let load our kernel module using the following command
+$ sudo insmod dirtycow_mitigation.ko
+
+6.	Verify the kernel module to see if it was successfully loaded.
+$ lsmod | grep dirtycow_mitigation
+
+7.	Finally, We will test our kernel module by running the dirtycow exploit again to see if it was mitigated as expected.
+
+8.	This final step, remove the kernel module after it has been successfully test using the follow command.
+$ sudo rmmod dirtycow_mitigation
